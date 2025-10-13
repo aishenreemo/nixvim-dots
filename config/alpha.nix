@@ -45,7 +45,7 @@
   keymaps = [
   {
     mode = "n";
-    key = "<leader>d";
+    key = "<leader>h";
     action = ":Alpha<CR>";
     options.desc = "Show dashboard";
   }
