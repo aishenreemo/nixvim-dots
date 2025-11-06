@@ -46,6 +46,7 @@
     ./files.nix
     ./nvim-tree.nix
     ./telescope.nix
+    ./autocommands.nix
   ];
 
 
