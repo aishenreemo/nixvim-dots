@@ -47,8 +47,13 @@
     ./nvim-tree.nix
     ./telescope.nix
     ./autocommands.nix
+    ./zk.nix
   ];
 
+  config.extraPackages = with pkgs; [
+    zk
+    ripgrep
+  ];
 
   config.extraPlugins = [
     (pkgs.vimUtils.buildVimPlugin {

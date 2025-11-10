@@ -17,5 +17,20 @@
         '';
       };
     }
+    {
+      event = ["FileType"];
+      pattern = ["markdown"];
+      command = ''
+        setlocal conceallevel=2
+        setlocal concealcursor=nvic
+        syn region markdownWikiLink start="\[\[" end="\]\]" contains=markdownWikiLinkIdWithPipe,markdownUrl keepend oneline concealends
+
+        syn region markdownLinkText start="!\=\[\%(\%(\_[^][]\|\[\_[^][]*\]\)*]\%( \=[[(]\)\)\@=" end="\]\%( \=[[(]\)\@=" nextgroup=markdownLink,markdownId skipwhite contains=@markdownInline,markdownLineStart concealends
+
+        syn region markdownLink start="(" end=")" contains=markdownUrl keepend contained conceal
+
+        hi def link markdownWikiLink Underlined
+      '';
+    }
   ];
 }
